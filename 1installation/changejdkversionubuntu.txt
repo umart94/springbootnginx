@@ -1,0 +1,23 @@
+See this; run
+
+sudo  update-java-alternatives --list
+to list off all the Java installations on a machine by name and directory, and then run
+
+sudo  update-java-alternatives --set [JDK/JRE name e.g. java-8-oracle]
+to choose which JRE/JDK to use.
+
+If you want to use different JDKs/JREs for each Java task, you can run update-alternatives to configure one java executable at a time; you can run
+
+sudo  update-alternatives --config java[Tab]
+to see the Java commands that can be configured (java, javac, javah, javaws, etc). And then
+
+sudo  update-alternatives --config [javac|java|javadoc|etc.]
+will associate that Java task/command to a particular JDK/JRE.
+
+You may also need to set JAVA_HOME for some applications: from this answer you can use
+
+export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+for JREs, or
+
+export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:jre/bin/java::")
+for JDKs.

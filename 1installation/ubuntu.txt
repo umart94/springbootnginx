@@ -1,0 +1,17 @@
+install ubuntu vm in oracle virtualbox
+
+download iso file
+
+create a new virtual machine
+
+go to its settings
+
+go to storage
+
+add a new cd
+
+choose cd
+
+start the virtual machine
+
+install it
